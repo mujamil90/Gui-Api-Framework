@@ -1,0 +1,10 @@
+{
+  "PARTIAL_URLS":
+  {
+    "settingUrl" : "/settings"
+  },
+  "TEXTS":
+  {
+    "uploadImageText" : "You can upload jpg. or png image files. Max size 2mb."
+  }
+}

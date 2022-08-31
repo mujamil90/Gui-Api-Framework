@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="GUI Test Suite" verbose="10" >
+    <listeners>
+        <listener class-name="com.ui.api.qagenes.listeners.LoggingListener"/>
+        <listener class-name="com.ui.api.qagenes.listeners.AnnotationTransformer"/>
+    </listeners>
+    <test name="GUI Tests" >
+        <classes>
+            <class name="CreatePageTests" />
+            <class name="SettingsPageTests" />
+        </classes>
+    </test>
+
+
+</suite>
