@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.ui.api.qagenes.util.gui.Helper.waitAndClickElement;
 import static com.ui.api.qagenes.util.gui.SeleniumActions.mouseHover;
-import static com.ui.api.qagenes.util.gui.SeleniumWaits.waitForElementToBeClickable;
+import static com.ui.api.qagenes.util.gui.SeleniumWaits.waitForElementToBeVisible;
 
 public class AllTemplates extends BasePage {
 
@@ -24,7 +24,7 @@ public class AllTemplates extends BasePage {
     }
 
     public AllTemplates clickOnFirstTemplate(){
-        waitForElementToBeClickable(firstTemplate);
+        waitForElementToBeVisible(firstTemplate);
         mouseHover(firstTemplate);
         waitAndClickElement(editButton);
 

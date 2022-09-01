@@ -1,12 +1,13 @@
 package com.ui.api.qagenes.pages;
 
-import static com.ui.api.qagenes.util.gui.FileUploader.uploadRandomImagedFile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import static com.ui.api.qagenes.drivers.DriverManager.getDriver;
+import static com.ui.api.qagenes.util.gui.FileUploader.uploadRandomImagedFile;
 import static com.ui.api.qagenes.util.gui.Helper.waitAndClickElement;
+import static com.ui.api.qagenes.util.gui.PlatformConstants.SETTINGS_URL;
 import static com.ui.api.qagenes.util.gui.SeleniumWaits.*;
 
 public class SettingsPage extends BasePage{
@@ -25,7 +26,7 @@ public class SettingsPage extends BasePage{
     }
 
     public String getCurrentUrlOfPage(){
-        waitForPageToContainsUrl("/settings");
+        waitForPageToContainsUrl(SETTINGS_URL);
         return getDriver().getCurrentUrl();
     }
 

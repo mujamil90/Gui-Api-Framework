@@ -2,9 +2,12 @@ package com.ui.api.qagenes.listeners;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
+
+import static com.ui.api.qagenes.util.gui.PlatformConstants.MAX_TRY;
+
 public class RetryFailedTests implements IRetryAnalyzer {
     private int count = 0;
-    private static int maxTry = 3;
+    private static int maxTry = MAX_TRY;
 
     @Override
     public boolean retry(ITestResult iTestResult) {

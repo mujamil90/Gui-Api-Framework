@@ -14,12 +14,14 @@ public class Helper {
 
     public static void waitAndClickElement(WebElement element){
         waitForElementToBeClickable(element);
+        LOG.info("Ready to click on web element : " + StringUtils.elementToString(element));
         element.click();
         LOG.info("clicked on web element : " + StringUtils.elementToString(element) +" to be visible");
     }
 
     public static void enterText(WebElement element, String text){
         waitForElementToBeVisible(element);
+        LOG.info("Ready to type "+text+" in web element : " + StringUtils.elementToString(element));
         element.sendKeys(text);
         LOG.info("sent keys "+ text+" to web element : " + StringUtils.elementToString(element) +" to be visible");
     }

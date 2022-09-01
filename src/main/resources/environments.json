@@ -1,26 +1,26 @@
 {
   "LOCALHOST":
   {
-    "url" : "http://localhost:4201/"
+    "url" : "http://localhost:4201"
   },
   "DEV":
   {
-    "url" : "https://dev.picsart.com/"
+    "url" : "https://dev.picsart.com"
   },
   "QA":
   {
-    "url" : "https://qa.picsart.com/"
+    "url" : "https://qa.picsart.com"
   },
   "DEMO":
   {
-    "url" : "https://demo.picsart.com/"
+    "url" : "https://demo.picsart.com"
   },
   "PRODUCTION":
   {
-    "url" : "https://picsart.com/"
+    "url" : "https://picsart.com"
   },
   "API":
   {
-    "url" : "https://api.picsart.com/"
+    "url" : "https://api.picsart.com"
   }
 }

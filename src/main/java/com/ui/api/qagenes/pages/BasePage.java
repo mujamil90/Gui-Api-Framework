@@ -6,13 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
-import static com.ui.api.qagenes.drivers.DriverManager.getDriver;
 import static com.ui.api.qagenes.util.gui.Helper.enterText;
 import static com.ui.api.qagenes.util.gui.Helper.waitAndClickElement;
+import static com.ui.api.qagenes.util.gui.PlatformConstants.EMAIL;
+import static com.ui.api.qagenes.util.gui.PlatformConstants.PASSWORD;
 import static com.ui.api.qagenes.util.gui.SeleniumWaits.waitForElementToBeVisible;
-import static org.openqa.selenium.support.PageFactory.initElements;
 
 
 public class BasePage extends PageGenerator {
@@ -26,14 +24,8 @@ public class BasePage extends PageGenerator {
     @FindBy(css = "ul.bannerContent")
     WebElement allBanners;
     @CacheLookup
-    @FindBy(css = "div[class$='modalContainer']")
+    @FindBy(css = "div[class^='formContainer']")
     WebElement registrationPopUp;
-
-    @FindBy(css = "div[class$='modalContainer'] h3")
-    List<WebElement> headersOnPopUp;
-
-    @FindBy(css = "div[class$='modalContainer'] ul li")
-    List<WebElement> presentationListPopUp;
 
     @FindBy(css = "[data-test='login-button']")
     WebElement loginButton;
@@ -56,11 +48,11 @@ public class BasePage extends PageGenerator {
     }
 
     public void enterEmail(){
-        enterText(email, "mujamil87@gmail.com");
+        enterText(email, EMAIL);
     }
 
     public void enterPassword(){
-        enterText(password, "Picsart@123");
+        enterText(password, PASSWORD);
     }
     public void navigateToLoginPopUp(){
         waitForElementToBeVisible(loginButton);
@@ -81,7 +73,7 @@ public class BasePage extends PageGenerator {
 
     public boolean checkPresenceOfUserAvatar(){
         waitForElementToBeVisible(userAvatar);
-        return registrationPopUp.isDisplayed();
+        return userAvatar.isDisplayed();
     }
 
     public void clickUserAvatar(){

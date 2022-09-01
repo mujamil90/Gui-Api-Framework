@@ -1,6 +1,9 @@
 package com.ui.api.qagenes.testdata;
 
 import com.ui.api.qagenes.util.gui.PathFinder;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +11,7 @@ import java.util.Properties;
 
 public class PropertiesReader {
 
-
+    private static final Logger LOG     = LogManager.getLogger (Properties.class);
   public static Properties prop ;
 
      public static Properties loadPropertiesFile() {

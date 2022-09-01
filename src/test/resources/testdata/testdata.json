@@ -1,7 +1,9 @@
 {
   "PARTIAL_URLS":
   {
-    "settingUrl" : "/settings"
+    "settingUrl" : "/settings",
+    "createUrl" : "/create",
+    "reusableComponents" : "/localizations/en/messages?project=reusable_components,photo_editor"
   },
   "TEXTS":
   {

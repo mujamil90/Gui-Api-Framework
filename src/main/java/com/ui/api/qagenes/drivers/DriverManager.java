@@ -17,8 +17,8 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Objects;
 
+import static com.ui.api.qagenes.util.gui.PlatformConstants.TIMEOUT;
 import static org.openqa.selenium.remote.Browser.CHROME;
-import static org.openqa.selenium.remote.Browser.EDGE;
 
 
 public class DriverManager {
@@ -74,13 +74,13 @@ public class DriverManager {
         LOG.info ("Setting Browser Timeouts....");
         getDriver ().manage ()
             .timeouts ()
-            .implicitlyWait (Duration.ofSeconds (30));
+            .implicitlyWait (Duration.ofMillis (TIMEOUT));
         getDriver ().manage ()
             .timeouts ()
-            .pageLoadTimeout (Duration.ofSeconds (30));
+            .pageLoadTimeout (Duration.ofMillis (TIMEOUT));
         getDriver ().manage ()
             .timeouts ()
-            .scriptTimeout (Duration.ofSeconds (30));
+            .scriptTimeout (Duration.ofMillis (TIMEOUT));
     }
 
     private DriverManager () {

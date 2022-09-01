@@ -9,9 +9,6 @@ public class CreatePage extends BasePage{
     @FindBy(css = "[data-testid='create-search-button']")
     WebElement newProjectButton;
 
-    @FindBy(css = "[data-testid='create-upload-button']")
-    WebElement uploadButton;
-
     @FindBy(css = "[data-test='see-all-button']")
     WebElement allTemplatesLink;
     @FindBy(id = "onetrust-accept-btn-container")
@@ -27,10 +24,6 @@ public class CreatePage extends BasePage{
         return this;
     }
 
-    public CreatePage clickUploadButton(){
-        waitAndClickElement(uploadButton);
-        return this;
-    }
     public CreatePage acceptCookies(){
         waitAndClickElement(acceptCookies);
         return this;

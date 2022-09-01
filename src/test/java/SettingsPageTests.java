@@ -6,6 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static com.ui.api.qagenes.util.gui.PlatformConstants.SETTINGS_URL;
+import static com.ui.api.qagenes.util.gui.PlatformConstants.UPLOAD_IMAGE_TEXT;
+
 public class SettingsPageTests extends BaseTest{
 
     @BeforeMethod(alwaysRun = true)
@@ -19,14 +22,14 @@ public class SettingsPageTests extends BaseTest{
     public void testSettingsPageUrl(){
         page.getInstanceOfPage(HomePage.class).navigateToSettingPage();
         String Url = page.getInstanceOfPage(SettingsPage.class).getCurrentUrlOfPage();
-        Assert.assertTrue(Url.endsWith("settings"), "Page url is not ending with 'Settings' word.");
+        Assert.assertTrue(Url.endsWith(SETTINGS_URL), "Page url is not ending with 'Settings' word.");
     }
 
     @Test
     public void testTextForUploadImage(){
         page.getInstanceOfPage(HomePage.class).navigateToSettingPage();
         String text = page.getInstanceOfPage(SettingsPage.class).getTextOfUploadImage();
-        Assert.assertTrue(text.equalsIgnoreCase("You can upload jpg. or png image files. Max size 2mb."), "Text about upload image is not matching from expected text.");
+        Assert.assertTrue(text.equalsIgnoreCase(UPLOAD_IMAGE_TEXT), "Text ->"+ text +" about upload image is not matching from expected text ->" + UPLOAD_IMAGE_TEXT);
     }
     @Test
     public void testUploadPhoto(){

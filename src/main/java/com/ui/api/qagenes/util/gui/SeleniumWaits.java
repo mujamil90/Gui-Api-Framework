@@ -2,17 +2,16 @@ package com.ui.api.qagenes.util.gui;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
-import java.util.function.Function;
 
 import static com.ui.api.qagenes.drivers.DriverManager.getDriver;
+import static com.ui.api.qagenes.util.gui.PlatformConstants.MAX_WAIT;
+import static com.ui.api.qagenes.util.gui.PlatformConstants.MIN_WAIT;
 
 
 public class SeleniumWaits {
@@ -20,9 +19,10 @@ public class SeleniumWaits {
     private static final Logger LOG = LogManager.getLogger(SeleniumWaits.class);
     private static FluentWait getFluentWait()
     {
+        LOG.info("Setting up Fluent wait...");
         FluentWait fluentWait = new FluentWait(getDriver())
-                .withTimeout(Duration.ofMillis(20000))
-                .pollingEvery(Duration.ofMillis(200))
+                .withTimeout(Duration.ofMillis(MAX_WAIT))
+                .pollingEvery(Duration.ofMillis(MIN_WAIT))
                 .ignoring(NoSuchElementException.class);
 
         return fluentWait;

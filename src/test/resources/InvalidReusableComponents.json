@@ -6,7 +6,7 @@
       "type": "string"
     },
     "1K+ templates": {
-      "type": "string"
+      "type": "object"
     },
     "50K+ stock images": {
       "type": "string"
@@ -4685,6 +4685,9 @@
     "Moved to": {
       "type": "string"
     },
+    "Moved to %s": {
+      "type": "string"
+    },
     "Multiply": {
       "type": "string"
     },
@@ -4889,7 +4892,7 @@
     "Organic Shapes": {
       "type": "string"
     },
-    "Organization is clearly your superpower, but there’s no space for more folders. Try combining some.": {
+    "Organization is clearly your superpower, but you’ve reached the limit of folders. Try combining some.": {
       "type": "string"
     },
     "Organization is clearly your superpower, but you’ve reached the limit of folders. Upgrade for more folders and other premium perks.": {
@@ -5970,6 +5973,9 @@
       "type": "string"
     },
     "Tiny Planet": {
+      "type": "string"
+    },
+    "To add a subfolder, hit <b>Create new folder</b>.": {
       "type": "string"
     },
     "To add a subfolder, hit Create new folder.": {
@@ -8246,6 +8252,7 @@
     "Motion Blur",
     "Move to",
     "Moved to",
+    "Moved to %s",
     "Multiply",
     "Mural Wallpapers",
     "My Projects",
@@ -8314,7 +8321,7 @@
     "Open the Animation Settings",
     "Or drag and drop your files here.",
     "Organic Shapes",
-    "Organization is clearly your superpower, but there’s no space for more folders. Try combining some.",
+    "Organization is clearly your superpower, but you’ve reached the limit of folders. Try combining some.",
     "Organization is clearly your superpower, but you’ve reached the limit of folders. Upgrade for more folders and other premium perks.",
     "Orientation",
     "Original",
@@ -8675,6 +8682,7 @@
     "Tik-Tok Templates",
     "TikTok Video",
     "Tiny Planet",
+    "To add a subfolder, hit <b>Create new folder</b>.",
     "To add a subfolder, hit Create new folder.",
     "To duplicate this project and save it, you’ll need to clear some space first.",
     "To export your work, apply or cancel your edits first",

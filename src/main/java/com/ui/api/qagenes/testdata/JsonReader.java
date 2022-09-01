@@ -2,12 +2,9 @@ package com.ui.api.qagenes.testdata;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ui.api.qagenes.drivers.DriverManager;
 import com.ui.api.qagenes.util.gui.PathFinder;
-import com.ui.api.qagenes.util.gui.PlatformConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.mozilla.javascript.tools.shell.Environment;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -15,15 +12,14 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.InvalidParameterException;
 import java.util.Arrays;
-import java.util.Properties;
 
 public class JsonReader {
     private static Reader reader;
     public static JsonNode environmentJsonNode, accountDataJsonNode, testDataJsonNode;
-    private static final Logger LOG     = LogManager.getLogger (DriverManager.class);
+    private static final Logger LOG     = LogManager.getLogger (JsonReader.class);
 
      public static void loadAllJsonData(){
-        LOG.info("All Json and Properties file are ready to load");
+        LOG.info("All Json and Properties file are ready to load...");
         PropertiesReader.loadPropertiesFile();
         accountDataJsonNode = loadAccountDataJson();
         environmentJsonNode = getJsonNode(PathFinder.getEnvironmentJsonFile());
@@ -58,6 +54,11 @@ public class JsonReader {
 
     public  static String getEnvironmentJsonNode(){
         JsonNode host = environmentJsonNode.path(PropertiesReader.getProperty("Environment"));
+        return host.path("url").asText();
+    }
+
+    public  static String getEnvironmentJsonNode(String env){
+        JsonNode host = environmentJsonNode.path(env);
         return host.path("url").asText();
     }
 
