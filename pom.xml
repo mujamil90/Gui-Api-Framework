@@ -17,6 +17,8 @@
         <log4japi.version>2.18.0</log4japi.version>
         <guava.version>31.1-jre</guava.version>
         <lombok.version>1.18.24</lombok.version>
+        <json-schema-validator.version>2.2.14</json-schema-validator.version>
+        <json-schema-core.version>1.2.14</json-schema-core.version>
         <jackson.version>2.10.0</jackson.version>
         <surefire.version>2.22.2</surefire.version>
         <maven.compiler.source>17</maven.compiler.source>
@@ -105,30 +107,31 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.github.java-json-tools</groupId>-->
-<!--            <artifactId>json-schema-core</artifactId>-->
-<!--            <version>1.2.14</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.github.java-json-tools</groupId>-->
-<!--            <artifactId>json-schema-validator</artifactId>-->
-<!--            <version>2.2.14</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.rest-assured</groupId>-->
-<!--            <artifactId>json-schema-validator</artifactId>-->
-<!--            <version>5.1.1</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.testng</groupId>-->
-<!--            <artifactId>testng</artifactId>-->
-<!--            <version>7.6.1</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
+        <!--https://intellij-support.jetbrains.com/hc/en-us/community/posts/206927425-Why-do-I-constantly-have-to-add-a-library-to-the-classpath-->
+        <dependency>
+            <groupId>com.github.java-json-tools</groupId>
+            <artifactId>json-schema-core</artifactId>
+            <version>${json-schema-core.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.java-json-tools</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${json-schema-validator.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${rest-assured.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>compile</scope>
+        </dependency>
         <!--https://intellij-support.jetbrains.com/hc/en-us/community/posts/206927425-Why-do-I-constantly-have-to-add-a-library-to-the-classpath-->
     </dependencies>
 
