@@ -11,6 +11,7 @@
 - Build Tools - **Maven**
 - Test data source file type- **JSON files** 
 - Implemented with  **Page Object Model Design Pattern with Page Factory**
+- Allure Report
 - Builder pattern for API tests
 - Sample Pipeline is implemented
 
@@ -38,18 +39,18 @@ mvn clean test -Dsurefire.suiteXmlFiles=GUI-Tests.xml
 ```
 ---
 ### Browser Setup
-- Navigate to *.\src\main\resources* change *BrowserType* in the Config.properties
+- Navigate to *.\src\test\resources* change *Browser* in the Config.properties
 ---
 
-### Report Details
+After test execution, Allure results will appear in target/allure-results folder. To generate html report and automatically open it in a web browser, run the following command:
 
-**Report Location** `System.getProperty("user.dir") + "/src/test/resources/Reports/";`
+### Generate Report
 
-**Failed Screenshots** `System.getProperty("user.dir") + "/src/test/resources/Reports/Images";`
+```sh
+$ allure serve allure-results
+```
 
-**Video Location** `System.getProperty("user.dir") + "videos";`
-
-**Test Data** `System.getProperty("user.dir") + "/src/test/resources/TestData";`
+After execute above command it will open Allure report in browser itself.
 
 ---
 

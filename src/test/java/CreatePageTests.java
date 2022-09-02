@@ -21,7 +21,7 @@ public class CreatePageTests extends BaseTest {
              clickNewProject();
         boolean isVisible = page.getInstanceOfPage(RegistrationPopUp.class).
                                  checkPresenceOfRegistrationPopUp();
-        Assert.assertTrue(false, "Registration pop up is not present.");
+        Assert.assertTrue(isVisible, "Registration pop up is not present.");
     }
 
 
