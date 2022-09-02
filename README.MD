@@ -27,7 +27,7 @@
 
 ---
 ### Reporting
-- [Extent Reporting](http://extentreports.com/)
+- Allure Report
 
 ---
 ### Usage
