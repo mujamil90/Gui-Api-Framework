@@ -34,7 +34,7 @@
 $ mvn clean test
 ```
 ```sh
-mvn clean test -Dsurefire.suiteXmlFiles=Gui.xml
+mvn clean test -Dsurefire.suiteXmlFiles=GUI-Tests.xml
 ```
 ---
 ### Browser Setup

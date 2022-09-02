@@ -20,10 +20,12 @@
         <json-schema-validator.version>2.2.14</json-schema-validator.version>
         <json-schema-core.version>1.2.14</json-schema-core.version>
         <jackson.version>2.10.0</jackson.version>
-        <surefire.version>2.22.2</surefire.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <surefire.version>2.20</surefire.version>
+        <allure.version>2.19.0</allure.version>
+        <maven-compiler.version>3.8.1</maven-compiler.version>
+        <maven.compiler.release>11</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aspectj.version>1.9.9.1</aspectj.version>
     </properties>
 
 
@@ -132,6 +134,19 @@
             <version>${testng.version}</version>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>${allure.version}</version>
+            <scope>compile</scope>
+        </dependency>
         <!--https://intellij-support.jetbrains.com/hc/en-us/community/posts/206927425-Why-do-I-constantly-have-to-add-a-library-to-the-classpath-->
     </dependencies>
 
@@ -139,6 +154,18 @@
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler.version}</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <!-- alternatively the below configuration properties can be used - doesn't matter really -->
+                        <!-- <source>11</source> -->
+                        <!-- <target>11</target> -->
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
@@ -154,7 +181,18 @@
                                 ${suiteXmlFile}
                             </suiteXmlFile>
                         </suiteXmlFiles>
+                        <argLine>
+                            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        </argLine>
                     </configuration>
+
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.aspectj</groupId>
+                            <artifactId>aspectjweaver</artifactId>
+                            <version>${aspectj.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>
